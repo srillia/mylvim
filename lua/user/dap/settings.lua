@@ -10,7 +10,7 @@ end
 
 -- dap config
 
-local mason_install_home = '/Users/zhangzhenghan/.local/share/nvim/mason'
+local mason_install_home = vim.fn.stdpath "data" .. "/mason"
 
 dap.adapters.python = {
   type = 'executable';
@@ -38,7 +38,7 @@ dap.configurations.python = {
       elseif vim.fn.executable(cwd .. '/.venv/bin/python') == 1 then
         return cwd .. '/.venv/bin/python'
       else
-        return '/usr/local/bin/python3.9'
+        return '/usr/bin/python3'
       end
     end;
   },
