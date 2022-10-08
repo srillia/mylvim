@@ -127,12 +127,15 @@ return packer.startup(function(use)
   use {
     "rcarriga/nvim-notify",
     config = function ()
-      -- require'notify'.setup()
+      require'notify'.setup{
+        level = "warn"
+      }
       vim.notify = require("notify")
     end
   }
 
   use 'psliwka/vim-smoothie'
+  use 'kevinhwang91/rnvimr'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
