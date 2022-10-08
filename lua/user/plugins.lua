@@ -99,7 +99,40 @@ return packer.startup(function(use)
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "014ebd53612cfd42ac8c131e6cec7c194572f21d" }
   use { "rcarriga/nvim-dap-ui", commit = "d76d6594374fb54abf2d94d6a320f3fd6e9bb2f7" }
-  use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+  -- use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+
+
+  -- Extra Plugins
+  -- which-key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- lsp-settings
+  use {
+    "tamago324/nlsp-settings.nvim",
+    config = function ()
+      require'nlspsettings'.setup()
+    end
+  }
+
+  -- notify
+  use {
+    "rcarriga/nvim-notify",
+    config = function ()
+      -- require'notify'.setup()
+      vim.notify = require("notify")
+    end
+  }
+
+  use 'psliwka/vim-smoothie'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
