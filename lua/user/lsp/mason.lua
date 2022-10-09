@@ -7,6 +7,8 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+  "lemminx",
+  "jdtls",
 }
 
 local settings = {
