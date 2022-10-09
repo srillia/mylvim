@@ -5,7 +5,7 @@ local opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
+-- vim.g.mapleader = " "
 
 -- Modes
 --   normal_mode = "n",
@@ -111,6 +111,12 @@ keymap("n", "<leader>at", "<cmd>ASToggle<CR>", opts)
 -- persistence
 keymap("n", "<leader>pl", "<cmd>lua require('persistence').load()<cr>", opts)
 
+-- persistence
+keymap("n", "<leader>so", "<cmd>SymbolsOutline<cr>", opts)
+
+-- glow
+keymap("n", "<leader>gl", "<cmd>Glow<cr>", opts)
+
 -- trouble
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 keymap("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
@@ -118,3 +124,8 @@ keymap("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", opts)
 keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
+
+-- diffview
+keymap("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", opts)
+keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", opts)
+

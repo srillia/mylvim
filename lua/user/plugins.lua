@@ -201,7 +201,20 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"sindrets/diffview.nvim",
+		event = "BufRead",
+	})
+
 	use("kevinhwang91/rnvimr")
+	use({
+		"ellisonleao/glow.nvim",
+		config = function()
+			require("glow").setup({
+				width = 180,
+			})
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
