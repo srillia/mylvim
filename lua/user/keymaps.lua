@@ -116,6 +116,8 @@ keymap("n", "<leader>so", "<cmd>SymbolsOutline<cr>", opts)
 
 -- glow
 keymap("n", "<leader>gl", "<cmd>Glow<cr>", opts)
+-- markdown-preview
+keymap("n", "<leader>mp", "<cmd>MarkdownPreview<cr>", opts)
 
 -- trouble
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
@@ -129,3 +131,5 @@ keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 keymap("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", opts)
 
+-- todo-comments
+keymap("n", "<leader>td", "<cmd>TodoTrouble<cr>", opts)
