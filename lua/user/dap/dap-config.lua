@@ -32,6 +32,7 @@ dapui.setup({
 	tray = {
 		elements = {
 			"repl",
+      "console",
 		},
 		position = "bottom",
 	},
