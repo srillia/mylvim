@@ -237,8 +237,27 @@ return packer.startup(function(use)
       })
     end,
   })
+
   use('tpope/vim-surround')
-  use('mfussenegger/nvim-jdtls')
+
+  use({
+    'mfussenegger/nvim-jdtls',
+     ft = "java"
+  })
+
+  use({
+    'MunifTanjim/exrc.nvim',
+    config = function ()
+      require("exrc").setup({
+        files = {
+          ".nvimrc.lua",
+          ".nvimrc",
+          ".exrc.lua",
+          ".exrc",
+        },
+      })
+    end
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
