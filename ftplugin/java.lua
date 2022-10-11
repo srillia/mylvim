@@ -6,7 +6,8 @@ end
 
 -- Determine OS
 local home = os.getenv("HOME")
-local mason_home = home .. "/.local/share/nvim/mason"
+-- use mason manage packages
+local mason_home = require("user.lsp.utils").mason_home()
 local launcher_path = vim.fn.glob(mason_home .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar")
 if #launcher_path == 0 then
 	launcher_path = vim.fn.glob(mason_home .. "/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar", 1, 1)[1]
