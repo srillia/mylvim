@@ -115,12 +115,12 @@ return packer.startup(function(use)
   })
 
   -- lsp-settings
-  use({
-    "tamago324/nlsp-settings.nvim",
-    config = function()
-      require("nlspsettings").setup()
-    end,
-  })
+  -- use({
+  --   "tamago324/nlsp-settings.nvim",
+  --   config = function()
+  --     require("nlspsettings").setup()
+  --   end,
+  -- })
 
   -- notify
   use({
@@ -238,7 +238,14 @@ return packer.startup(function(use)
     end,
   })
 
-  use('tpope/vim-surround')
+  use({
+    "kylechui/nvim-surround",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 
   use({
     'mfussenegger/nvim-jdtls',
