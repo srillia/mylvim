@@ -8,6 +8,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
   "lemminx",
+  "gopls",
   -- "jdtls",
 }
 

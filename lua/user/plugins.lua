@@ -45,7 +45,7 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use({ "wbthomason/packer.nvim", commit = "6afb67460283f0e990d35d229fd38fdc04063e0a" }) -- Have packer manage itself
-	use({ "nvim-lua/plenary.nvim", commit = "4b7e52044bbb84242158d977a50c4cbcd85070c7" }) -- Useful lua functions used by lots of plugins
+	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim", commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" })
@@ -127,7 +127,7 @@ return packer.startup(function(use)
 		"rcarriga/nvim-notify",
 		config = function()
 			require("notify").setup({
-				level = "warn",
+				-- level = "warn",
 			})
 			vim.notify = require("notify")
 		end,
@@ -145,14 +145,6 @@ return packer.startup(function(use)
 		branch = "v2",
 		config = function()
 			require("hop").setup()
-		end,
-	})
-
-	use({
-		"ahmedkhalf/lsp-rooter.nvim",
-		event = "BufRead",
-		config = function()
-			require("lsp-rooter").setup()
 		end,
 	})
 
@@ -265,7 +257,15 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+
 	use("b0o/schemastore.nvim")
+
+	-- use({
+ --    "leoluz/nvim-dap-go",
+ --    config = function ()
+ --       require('dap-go').setup()
+ --    end
+ --  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
