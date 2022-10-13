@@ -166,18 +166,6 @@ return packer.startup(function(use)
 	})
 
 	use({
-		"folke/persistence.nvim",
-		event = "BufReadPre", -- this will only start session saving when an actual file was opened
-		module = "persistence",
-		config = function()
-			require("persistence").setup({
-				dir = vim.fn.expand(vim.fn.stdpath("data") .. "/session/"),
-				options = { "buffers", "curdir", "tabpages", "winsize" },
-			})
-		end,
-	})
-
-	use({
 		"simrat39/symbols-outline.nvim",
 		config = function()
 			require("symbols-outline").setup()
