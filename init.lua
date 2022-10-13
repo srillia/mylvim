@@ -1,6 +1,7 @@
 require("user.impatient")
 require("user.options")
 require("user.notify")
+require("user.dressing")
 require("user.keymaps")
 require("user.plugins")
 require("user.autocommands")

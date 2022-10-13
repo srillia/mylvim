@@ -57,14 +57,5 @@ dap.configurations.go = {
 		program = "${fileDirname}",
     dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
   },
-  {
-    type = 'go';
-		name = "Debug Package With Exrc Args",
-    request = 'launch';
-    showLog = false;
-		program = "${fileDirname}",
-    args = "--apollo.meta=http://192.168.19.107:8080",
-    dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
-  },
 }
 

@@ -68,20 +68,20 @@ require("dapui").setup({
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
 
-M.eval = function()
-  local expr = ""
-	if vim.fn.mode() == "v" then
-		local start = vim.fn.getpos("v")
-		local finish = vim.fn.getpos(".")
-		local lines = require("dapui.util").get_selection(start, finish)
-		expr = table.concat(lines, "\n")
-	elseif vim.fn.mode() == "n" then
-	  vim.ui.input({ prompt = "> " }, function(express)
-      expr = express or vim.fn.expand("<cexpr>")
-    end)
-	end
-  dapui.eval("call " .. expr)
-end
+-- M.eval = function()
+--   local expr = ""
+-- 	if vim.fn.mode() == "v" then
+-- 		local start = vim.fn.getpos("v")
+-- 		local finish = vim.fn.getpos(".")
+-- 		local lines = require("dapui.util").get_selection(start, finish)
+-- 		expr = table.concat(lines, "\n")
+-- 	elseif vim.fn.mode() == "n" then
+-- 	  vim.ui.input({ prompt = "> " }, function(express)
+--       expr = express or vim.fn.expand("<cexpr>")
+--     end)
+-- 	end
+--   dapui.eval("call " .. expr)
+-- end
 
 -- set tap open dap-ui
 

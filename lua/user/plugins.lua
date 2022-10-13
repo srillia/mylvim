@@ -71,6 +71,7 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "rcarriga/cmp-dap" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
@@ -97,11 +98,11 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
 	use({
-    "theHamsta/nvim-dap-virtual-text",
-    config = function ()
-      require("nvim-dap-virtual-text").setup()
-    end
-  })
+		"theHamsta/nvim-dap-virtual-text",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
+	})
 
 	-- Extra Plugins
 	-- which-key
@@ -217,6 +218,7 @@ return packer.startup(function(use)
 		ft = "java",
 	})
 
+	use("stevearc/dressing.nvim")
 	use({
 		"MunifTanjim/exrc.nvim",
 		config = function()

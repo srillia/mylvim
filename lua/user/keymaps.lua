@@ -81,8 +81,8 @@ keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle({reset=true})<cr>", op
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<leader>de", "<Cmd>lua require'dapui'.eval()<CR>", opts)
 keymap("v", "<leader>de", "<Cmd>lua require'dapui'.eval()<CR>", opts)
-keymap("n", "<leader>dE", "<Cmd>lua require'user.dap.dap-config'.eval()<CR>", opts)
-keymap("v", "<leader>dE", "<Cmd>lua require'user.dap.dap-config'.eval()<CR>", opts)
+-- keymap("n", "<leader>dE", "<Cmd>lua require'user.dap.dap-config'.eval()<CR>", opts)
+-- keymap("v", "<leader>dE", "<Cmd>lua require'user.dap.dap-config'.eval()<CR>", opts)
 
 
 -- Buffer Lines
