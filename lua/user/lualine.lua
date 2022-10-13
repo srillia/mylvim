@@ -42,7 +42,7 @@ local lsp = function()
 	if next(buf_clients) ~= nil then
 		for _, client in pairs(buf_clients) do
 			if client.name ~= "null-ls" then
-				return client.name
+				return "[" .. client.name .. "]"
 			end
 		end
 	end

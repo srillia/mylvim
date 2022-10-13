@@ -43,6 +43,10 @@ M.python_path = function()
 	end
 end
 
+M.notify = function (msg)
+    vim.notify(msg, vim.log.levels.INFO, {title = 'MyLog'})
+end
+
 M.mason_home = function()
 	return  os.getenv("HOME").. "/.local/share/nvim/mason"
 end

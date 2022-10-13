@@ -120,15 +120,7 @@ return packer.startup(function(use)
 	-- })
 
 	-- notify
-	use({
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				-- level = "warn",
-			})
-			vim.notify = require("notify")
-		end,
-	})
+	use({ "rcarriga/nvim-notify" })
 
 	use({
 		"karb94/neoscroll.nvim",
