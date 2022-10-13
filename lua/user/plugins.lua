@@ -111,14 +111,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- lsp-settings
-	-- use({
-	--   "tamago324/nlsp-settings.nvim",
-	--   config = function()
-	--     require("nlspsettings").setup()
-	--   end,
-	-- })
-
 	-- notify
 	use({ "rcarriga/nvim-notify" })
 
