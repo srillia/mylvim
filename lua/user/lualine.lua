@@ -53,7 +53,7 @@ lualine.setup({
 	options = {
 		globalstatus = true,
 		icons_enabled = true,
-		theme = "auto",
+		theme = "codedark",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard" },
@@ -64,7 +64,7 @@ lualine.setup({
 		lualine_b = { "branch" },
 		lualine_c = { diagnostics },
 		lualine_x = { diff, spaces, "encoding", lsp, filetype },
-		lualine_y = { location },
-		lualine_z = { "progress" },
+		-- lualine_y = { location },
+		-- lualine_z = { "progress" },
 	},
 })
