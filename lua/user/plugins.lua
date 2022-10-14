@@ -237,11 +237,32 @@ return packer.startup(function(use)
 	})
 
 	use({
-    "ray-x/lsp_signature.nvim",
+		"ray-x/lsp_signature.nvim",
+		config = function()
+			require("lsp_signature").setup({
+				floating_window = false,
+			})
+		end,
+	})
+
+	--  Distraction-free coding
+	use({
+		"folke/zen-mode.nvim",
+		config = function()
+			require("zen-mode").setup()
+		end,
+	})
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup()
+		end,
+	})
+
+	use({
+    "norcalli/nvim-colorizer.lua",
     config = function ()
-      require "lsp_signature".setup({
-        floating_window = false,
-      })
+      require'colorizer'.setup()
     end
   })
 
