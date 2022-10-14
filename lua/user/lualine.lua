@@ -46,7 +46,7 @@ local lsp = function()
 			end
 		end
 	end
-  return ""
+	return ""
 end
 
 lualine.setup({

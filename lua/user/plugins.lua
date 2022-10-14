@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	use({ "nvim-tree/nvim-web-devicons" })
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "akinsho/bufferline.nvim" })
-	use({ "famiu/bufdelete.nvim"})
+	use({ "famiu/bufdelete.nvim" })
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "ahmedkhalf/project.nvim" })
@@ -229,6 +229,11 @@ return packer.startup(function(use)
 	})
 
 	use("b0o/schemastore.nvim")
+
+	use({
+		"SmiteshP/nvim-navic",
+		requires = "neovim/nvim-lspconfig",
+	})
 
 	-- use({
 	--    "leoluz/nvim-dap-go",

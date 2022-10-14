@@ -5,6 +5,16 @@ if not status_cmp_ok then
 	return
 end
 
+local status_ok, illuminate = pcall(require, "illuminate")
+if not status_ok then
+	return
+end
+
+local status_navic_ok, navic = pcall(require, "nvim-navic")
+if not status_navic_ok then
+	return
+end
+
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
@@ -73,35 +83,34 @@ end
 
 M.on_attach = function(client, bufnr)
 	if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 
 	if client.name == "sumneko_lua" then
-    client.server_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 
-  M.lsp_keymaps(bufnr)
-  local status_ok, illuminate = pcall(require, "illuminate")
-  if not status_ok then
-    print "test"
-    return
-  end
+	M.lsp_keymaps(bufnr)
 
-  illuminate.on_attach(client)
+	illuminate.on_attach(client)
 
-  if client.name == "jdtls" then
-    vim.lsp.codelens.refresh()
-    -- if JAVA_DAP_ACTIVE then
-    require("jdtls").setup_dap { hotcodereplace = "auto" }
-    require('jdtls.dap').setup_dap_main_class_configs()
-    -- end
-    client.server_capabilities.document_formatting = false
-    client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
-  end
+	if client.server_capabilities.documentSymbolProvider then
+		navic.attach(client, bufnr)
+	end
 
-  M.capabilities = vim.lsp.protocol.make_client_capabilities()
-  M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-  M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+	if client.name == "jdtls" then
+		vim.lsp.codelens.refresh()
+		-- if JAVA_DAP_ACTIVE then
+		require("jdtls").setup_dap({ hotcodereplace = "auto" })
+		require("jdtls.dap").setup_dap_main_class_configs()
+		-- end
+		client.server_capabilities.document_formatting = false
+		client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
+	end
+
+	M.capabilities = vim.lsp.protocol.make_client_capabilities()
+	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+	M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 end
 
 return M
