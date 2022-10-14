@@ -107,9 +107,6 @@ keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
 -- alpha
 keymap("n", "<leader>;", "<cmd>Alpha<CR>", opts)
 
--- auto-save
-keymap("n", "<leader>at", "<cmd>ASToggle<CR>", opts)
-
 -- persistence
 keymap("n", "<leader>pl", "<cmd>lua require('persistence').load()<cr>", opts)
 
@@ -132,6 +129,9 @@ keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 -- diffview
 keymap("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", opts)
+
+-- todo-comments
+keymap("n", "<leader>td", "<cmd>TodoTrouble<cr>", opts)
 
 -- todo-comments
 keymap("n", "<leader>td", "<cmd>TodoTrouble<cr>", opts)
