@@ -139,15 +139,6 @@ return packer.startup(function(use)
 	})
 
 	use({
-		"Pocco81/auto-save.nvim",
-		config = function()
-			require("auto-save").setup({
-				enabled = false,
-			})
-		end,
-	})
-
-	use({
 		"simrat39/symbols-outline.nvim",
 		config = function()
 			require("symbols-outline").setup()
