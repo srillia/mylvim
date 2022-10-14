@@ -214,6 +214,7 @@ return packer.startup(function(use)
 	})
 
 	use("stevearc/dressing.nvim")
+
 	use({
 		"MunifTanjim/exrc.nvim",
 		config = function()
@@ -235,12 +236,14 @@ return packer.startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 	})
 
-	-- use({
-	--    "leoluz/nvim-dap-go",
-	--    config = function ()
-	--       require('dap-go').setup()
-	--    end
-	--  })
+	use({
+    "ray-x/lsp_signature.nvim",
+    config = function ()
+      require "lsp_signature".setup({
+        floating_window = false,
+      })
+    end
+  })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
