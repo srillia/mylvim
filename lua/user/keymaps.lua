@@ -111,8 +111,6 @@ keymap("n", "<leader>pl", "<cmd>lua require('persistence').load()<cr>", opts)
 -- persistence
 keymap("n", "<leader>so", "<cmd>SymbolsOutline<cr>", opts)
 
--- glow
-keymap("n", "<leader>gl", "<cmd>Glow<cr>", opts)
 -- markdown-preview
 keymap("n", "<leader>mp", "<cmd>MarkdownPreview<cr>", opts)
 

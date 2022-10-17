@@ -173,14 +173,6 @@ return packer.startup(function(use)
 		event = "BufRead",
 	})
 	use({
-		"ellisonleao/glow.nvim",
-		config = function()
-			require("glow").setup({
-				width = 180,
-			})
-		end,
-	})
-	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
