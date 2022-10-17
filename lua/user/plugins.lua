@@ -86,12 +86,6 @@ return packer.startup(function(use)
 	-- DAP
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
-	use({
-		"theHamsta/nvim-dap-virtual-text",
-		config = function()
-			require("nvim-dap-virtual-text").setup()
-		end,
-	})
 
   -- UI 
 	use({ "lukas-reineke/indent-blankline.nvim" })
