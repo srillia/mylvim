@@ -94,9 +94,7 @@ keymap("n", "<leader>bD", "<cmd>BufferLineSortByDirectory<cr>", opts)
 keymap("n", "<leader>bL", "<cmd>BufferLineSortByExtension<cr>", opts)
 
 -- rnvimr
-keymap("t", "<leader>rr", "<cmd>RnvimrResize<cr>", opts)
-keymap("n", "<leader>rg", "<cmd>RnvimrToggle<cr>", opts)
-keymap("t", "<leader>rg", "<cmd>RnvimrToggle<cr>", opts)
+keymap("n", "<leader>rg", "<cmd>lua _RANGER_TOGGLE()<CR>", opts)
 
 -- hop
 keymap("n", "<leader><leader>w", "<cmd>HopWord<cr>", opts)

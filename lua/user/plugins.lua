@@ -172,7 +172,6 @@ return packer.startup(function(use)
 		"sindrets/diffview.nvim",
 		event = "BufRead",
 	})
-	use("kevinhwang91/rnvimr")
 	use({
 		"ellisonleao/glow.nvim",
 		config = function()

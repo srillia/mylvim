@@ -39,8 +39,7 @@ vim.opt.shortmess:append "c"                    -- hide all the completion messa
 vim.opt.whichwrap:append("<,>,[,],h,l")         -- keys allowed to move to the previous/next line when the beginning/end of line is reached
 vim.opt.iskeyword:append("-")                   -- treats words with `-` as single words
 
--- options
-vim.g.rnvimr_pick_enable = 1
+-- ext-options
 -- neovide
 vim.o.guifont = "MesloLGL Nerd Font Mono"
 -- navic
