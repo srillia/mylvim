@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "lewis6991/impatient.nvim" })
 
-
 	-- CMP
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
@@ -87,7 +86,7 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
 
-  -- UI 
+	-- UI
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "akinsho/bufferline.nvim" })
 	use({ "famiu/bufdelete.nvim" })
@@ -101,7 +100,13 @@ return packer.startup(function(use)
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
 	-- Treesitter
-  use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
+	use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
+	use({
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup()
+		end,
+	})
 	-- notify
 	use({ "rcarriga/nvim-notify" })
 	use({
@@ -123,13 +128,13 @@ return packer.startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 	})
 	use({
-    "norcalli/nvim-colorizer.lua",
-    config = function ()
-      require'colorizer'.setup()
-    end
-  })
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
 
-  -- EXT
+	-- EXT
 	use({ "goolord/alpha-nvim" })
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
@@ -191,7 +196,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
-  use({ "kevinhwang91/rnvimr" })
+	use({ "kevinhwang91/rnvimr" })
 	use({
 		"MunifTanjim/exrc.nvim",
 		config = function()
