@@ -223,6 +223,7 @@ return packer.startup(function(use)
 			require("twilight").setup()
 		end,
 	})
+	use({ "kevinhwang91/nvim-bqf", ft = "qf" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
