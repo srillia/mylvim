@@ -224,6 +224,11 @@ return packer.startup(function(use)
 		end,
 	})
 	use({ "kevinhwang91/nvim-bqf", ft = "qf" })
+	use({
+		"abecodes/tabout.nvim",
+		wants = { "nvim-treesitter" }, -- or require if not used so far
+		after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
