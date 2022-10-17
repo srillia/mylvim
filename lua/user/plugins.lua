@@ -191,6 +191,7 @@ return packer.startup(function(use)
 			})
 		end,
 	})
+  use({ "kevinhwang91/rnvimr" })
 	use({
 		"MunifTanjim/exrc.nvim",
 		config = function()
