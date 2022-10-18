@@ -124,6 +124,14 @@ keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
+-- overseer
+keymap("n", "<leader>ot", "<cmd>OverseerToggle<cr>", opts)
+keymap("n", "<leader>oa", "<cmd>OverseerTaskAction<cr>", opts)
+keymap("n", "<leader>ob", "<cmd>OverseerBuild<cr>", opts)
+keymap("n", "<leader>ol", "<cmd>OverseerLoadBundle<cr>", opts)
+keymap("n", "<leader>os", "<cmd>OverseerSaveBundle<cr>", opts)
+keymap("n", "<leader>od", "<cmd>OverseerDeleteBundle<cr>", opts)
+
 -- diffview
 keymap("n", "<leader>dv", "<cmd>DiffviewOpen<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>DiffviewClose<cr>", opts)
