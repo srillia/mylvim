@@ -31,6 +31,8 @@ end
 
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+-- use fidget to print progree status ,but now print error, set it in future.
+-- extendedClientCapabilities.progressReportProvider = false
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 
@@ -60,10 +62,7 @@ local bundles = {
 -- if #extra_bundles == 0 then
 --   extra_bundles = vim.fn.glob(mason_home .. "/packages/java-test/extension/server/*.jar", 1, 1)
 -- end
-vim.list_extend(
-	bundles,
-	vim.split(vim.fn.glob(mason_home .. "/packages/java-test/extension/server/*.jar"), "\n")
-)
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_home .. "/packages/java-test/extension/server/*.jar"), "\n"))
 
 local config = {
 	cmd = {
@@ -165,8 +164,12 @@ local config = {
 
 jdtls.start_or_attach(config)
 
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)")
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
+)
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
+)
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 -- vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
 vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
