@@ -4,7 +4,7 @@ return {
 			analysis = {
 				typeCheckingMode = "off",
 			},
-			pythonPath = require("user.lsp.utils").python_path(),
+			pythonPath = require("user.utils").python_path(),
 		},
 	},
 }

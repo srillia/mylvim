@@ -16,7 +16,7 @@ end
 -- debug python
 dap.adapters.python = {
 	type = "executable",
-	command = require("user.lsp.utils").mason_home() .. "/packages/debugpy/venv/bin/python3",
+	command = require("user.utils").mason_home() .. "/packages/debugpy/venv/bin/python3",
 	args = { "-m", "debugpy.adapter" },
 }
 
@@ -30,7 +30,7 @@ dap.configurations.python = {
 		-- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
 
 		program = "${file}", -- This configuration will launch the current file if used.
-		pythonPath = require("user.lsp.utils").python_path(),
+		pythonPath = require("user.utils").python_path(),
 	},
 }
 
@@ -38,7 +38,7 @@ dap.configurations.python = {
 dap.adapters.go = {
   type = 'executable';
   command = 'node';
-  args = {require("user.lsp.utils").mason_home() .. '/packages/go-debug-adapter/extension/dist/debugAdapter.js'};
+  args = {require("user.utils").mason_home() .. '/packages/go-debug-adapter/extension/dist/debugAdapter.js'};
 }
 dap.configurations.go = {
   {
