@@ -9,6 +9,7 @@ local servers = {
 	"yamlls",
   "lemminx",
   "gopls",
+  "intelephense",
   -- "jdtls",
 }
 

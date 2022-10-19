@@ -9,15 +9,22 @@ if not status_config_ok then
 end
 
 configs.setup({
-  -- ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
-  ensure_installed = "all",
-  -- ensure_installed = "all", -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	-- ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
+	ensure_installed = "all",
+	-- ensure_installed = "all", -- one of "all" or a list of languages
+	ignore_install = { "javascript" }, -- List of parsers to ignore installing
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  
-  highlight = {
+	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
+		-- disable = { "javascript" }, -- list of language that will be disabled
+		disable = function(_, buf)
+			local max_filesize = 100 * 1024 -- 100 KB
+			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+			-- require("user.utils").notify(stats.size)
+			if ok and stats and stats.size > max_filesize then
+				return true
+			end
+		end,
 	},
 	autopairs = {
 		enable = true,
@@ -28,15 +35,15 @@ configs.setup({
 		enable = true,
 		enable_autocmd = false,
 	},
-  rainbow = {
-    enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
-  },
-   autotag = {
-    enable = true,
-  },
+	rainbow = {
+		enable = true,
+		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+		max_file_lines = nil, -- Do not enable for files with more than n lines, int
+		-- colors = {}, -- table of hex strings
+		-- termcolors = {} -- table of colour name strings
+	},
+	autotag = {
+		enable = true,
+	},
 })
