@@ -69,19 +69,19 @@ return packer.startup(function(use)
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate" })
   use({ "ahmedkhalf/project.nvim" })
-  use({
-    "j-hui/fidget.nvim",
-    config = function()
-      require("fidget").setup({
-        text = {
-          spinner = "dots", -- animation shown when tasks are ongoing
-          done = "✔", -- character shown when all tasks are complete
-          commenced = "Started", -- message shown when task starts
-          completed = "Completed", -- message shown when task completes
-        },
-      })
-    end,
-  })
+  -- use({
+  --   "j-hui/fidget.nvim",
+  --   config = function()
+  --     require("fidget").setup({
+  --       text = {
+  --         spinner = "dots", -- animation shown when tasks are ongoing
+  --         done = "✔", -- character shown when all tasks are complete
+  --         commenced = "Started", -- message shown when task starts
+  --         completed = "Completed", -- message shown when task completes
+  --       },
+  --     })
+  --   end,
+  -- })
   use({
     "mfussenegger/nvim-jdtls",
     ft = "java",
@@ -115,6 +115,7 @@ return packer.startup(function(use)
   use({ "nvim-telescope/telescope.nvim" })
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
+  -- use({ "nvim-treesitter/nvim-treesitter" })
   use({
     "nvim-treesitter/nvim-treesitter-context",
     config = function()
@@ -148,12 +149,12 @@ return packer.startup(function(use)
     end,
   })
   use({ "p00f/nvim-ts-rainbow" })
-  use({
-    'mvllow/modes.nvim',
-    config = function()
-      require('modes').setup()
-    end
-  })
+  -- use({
+  --   'mvllow/modes.nvim',
+  --   config = function()
+  --     require('modes').setup()
+  --   end
+  -- })
 
   -- EXT
   use({ "goolord/alpha-nvim" })
@@ -256,12 +257,12 @@ return packer.startup(function(use)
       require("overseer").setup()
     end,
   })
-  use({
-    "beauwilliams/focus.nvim",
-    config = function()
-      require("focus").setup()
-    end,
-  })
+  -- use({
+  --   "beauwilliams/focus.nvim",
+  --   config = function()
+  --     require("focus").setup()
+  --   end,
+  -- })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

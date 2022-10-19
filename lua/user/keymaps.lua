@@ -63,6 +63,13 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap({ "n", "v" }, "<leader>gS", "<cmd>:Gitsigns stage_buffer<CR>", opts)
+keymap({ "n", "v" }, "<leader>gu", "<cmd>:Gitsigns undo_stage_hunk<CR>", opts)
+keymap("n", "<leader>gR", "<cmd>:Gitsigns reset_buffer<CR>", opts)
+keymap("n", "<leader>gr", "<cmd>:Gitsigns reset_hunk<CR>", opts)
+keymap("n", "<leader>gp", "<cmd>:Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>gb", "<cmd>:Gitsigns blame_line<CR>", opts)
+keymap("n", "<leader>gd", "<cmd>:Gitsigns diffthis<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
