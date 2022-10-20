@@ -10,6 +10,7 @@ local servers = {
   "lemminx",
   "gopls",
   "intelephense",
+  "marksman",
   -- "jdtls",
 }
 

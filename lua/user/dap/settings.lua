@@ -36,26 +36,40 @@ dap.configurations.python = {
 
 -- debug go
 dap.adapters.go = {
-  type = 'executable';
-  command = 'node';
-  args = {require("user.utils").mason_home() .. '/packages/go-debug-adapter/extension/dist/debugAdapter.js'};
+	type = "executable",
+	command = "node",
+	args = { require("user.utils").mason_home() .. "/packages/go-debug-adapter/extension/dist/debugAdapter.js" },
 }
 dap.configurations.go = {
-  {
-    type = 'go';
-    name = 'Debug';
-    request = 'launch';
-    showLog = false;
-    program = "${file}";
-    dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
-  },
-  {
-    type = 'go';
+	{
+		type = "go",
+		name = "Debug",
+		request = "launch",
+		showLog = false,
+		program = "${file}",
+		dlvToolPath = vim.fn.exepath("dlv"), -- Adjust to where delve is installed
+	},
+	{
+		type = "go",
 		name = "Debug Package",
-    request = 'launch';
-    showLog = false;
+		request = "launch",
+		showLog = false,
 		program = "${fileDirname}",
-    dlvToolPath = vim.fn.exepath('dlv')  -- Adjust to where delve is installed
-  },
+		dlvToolPath = vim.fn.exepath("dlv"), -- Adjust to where delve is installed
+	},
 }
 
+-- debug php
+dap.adapters.php = {
+	type = "executable",
+	command = "node",
+	args = { require("user.utils").mason_home() .. "/packages/php-debug-adapter/extension/out/phpDebug.js" },
+}
+dap.configurations.php = {
+	{
+		type = "php",
+		request = "launch",
+		name = "Listen for Xdebug",
+		port = 9000,
+	},
+}

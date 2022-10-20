@@ -199,17 +199,17 @@ return packer.startup(function(use)
       vim.fn["mkdp#util#install"]()
     end,
   })
-  use({
-    "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("todo-comments").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      })
-    end,
-  })
+  -- use({
+  --   "folke/todo-comments.nvim",
+  --   requires = "nvim-lua/plenary.nvim",
+  --   config = function()
+  --     require("todo-comments").setup({
+  --       -- your configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     })
+  --   end,
+  -- })
   use({
     "kylechui/nvim-surround",
     config = function()
@@ -233,18 +233,18 @@ return packer.startup(function(use)
     end,
   })
   --  Distraction-free coding
-  use({
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup()
-    end,
-  })
-  use({
-    "folke/twilight.nvim",
-    config = function()
-      require("twilight").setup()
-    end,
-  })
+  -- use({
+  --   "folke/zen-mode.nvim",
+  --   config = function()
+  --     require("zen-mode").setup()
+  --   end,
+  -- })
+  -- use({
+  --   "folke/twilight.nvim",
+  --   config = function()
+  --     require("twilight").setup()
+  --   end,
+  -- })
   use({ "kevinhwang91/nvim-bqf", ft = "qf" })
   use({
     "abecodes/tabout.nvim",
