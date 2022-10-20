@@ -60,16 +60,16 @@ dap.configurations.go = {
 }
 
 -- debug php
-dap.adapters.php = {
-	type = "executable",
-	command = "node",
-	args = { require("user.utils").mason_home() .. "/packages/php-debug-adapter/extension/out/phpDebug.js" },
-}
-dap.configurations.php = {
-	{
-		type = "php",
-		request = "launch",
-		name = "Listen for Xdebug",
-		port = 9000,
-	},
-}
+-- dap.adapters.php = {
+-- 	type = "executable",
+-- 	command = "node",
+-- 	args = { require("user.utils").mason_home() .. "/packages/php-debug-adapter/extension/out/phpDebug.js" },
+-- }
+-- dap.configurations.php = {
+-- 	{
+-- 		type = "php",
+-- 		request = "launch",
+-- 		name = "Listen for Xdebug",
+-- 		port = 9003,
+-- 	},
+-- }

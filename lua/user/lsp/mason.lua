@@ -11,6 +11,7 @@ local servers = {
   "gopls",
   "intelephense",
   "marksman",
+  "vuels",
   -- "jdtls",
 }
 
