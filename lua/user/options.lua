@@ -43,5 +43,5 @@ vim.opt.iskeyword:append("-")                   -- treats words with `-` as sing
 -- neovide
 vim.o.guifont = "MesloLGL Nerd Font Mono"
 -- navic
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+-- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
