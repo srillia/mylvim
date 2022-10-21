@@ -56,7 +56,7 @@ return packer.startup(function(use)
   use({ "hrsh7th/cmp-nvim-lsp" })
   use({ "hrsh7th/cmp-nvim-lua" })
   use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
-  use({ "windwp/nvim-ts-autotag" })
+  -- use({ "windwp/nvim-ts-autotag" })
   -- snippets
   use({ "L3MON4D3/LuaSnip" }) --snippet engine
   use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
@@ -114,14 +114,14 @@ return packer.startup(function(use)
   -- Telescope
   use({ "nvim-telescope/telescope.nvim" })
   -- Treesitter
-  use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
+  -- use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
   -- use({ "nvim-treesitter/nvim-treesitter" })
-  use({
-    "nvim-treesitter/nvim-treesitter-context",
-    config = function()
-      require("treesitter-context").setup()
-    end,
-  })
+  -- use({
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   config = function()
+  --     require("treesitter-context").setup()
+  --   end,
+  -- })
   -- notify
   use({ "rcarriga/nvim-notify" })
   use({
@@ -130,25 +130,25 @@ return packer.startup(function(use)
       require("symbols-outline").setup()
     end,
   })
-  use({
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup()
-    end,
-  })
+  -- use({
+  --   "folke/trouble.nvim",
+  --   requires = "kyazdani42/nvim-web-devicons",
+  --   config = function()
+  --     require("trouble").setup()
+  --   end,
+  -- })
   use("stevearc/dressing.nvim")
-  use({
-    "SmiteshP/nvim-navic",
-    requires = "neovim/nvim-lspconfig",
-  })
-  use({
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end,
-  })
-  use({ "p00f/nvim-ts-rainbow" })
+  -- use({
+  --   "SmiteshP/nvim-navic",
+  --   requires = "neovim/nvim-lspconfig",
+  -- })
+  -- use({
+  --   "norcalli/nvim-colorizer.lua",
+  --   config = function()
+  --     require("colorizer").setup()
+  --   end,
+  -- })
+  -- use({ "p00f/nvim-ts-rainbow" })
   -- use({
   --   'mvllow/modes.nvim',
   --   config = function()
@@ -159,7 +159,7 @@ return packer.startup(function(use)
   -- EXT
   use({ "goolord/alpha-nvim" })
   use({ "numToStr/Comment.nvim" })
-  use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+  -- use({ "JoosepAlviste/nvim-ts-context-commentstring" })
   -- Git
   use({ "lewis6991/gitsigns.nvim" })
   -- which-key
@@ -246,17 +246,17 @@ return packer.startup(function(use)
   --   end,
   -- })
   use({ "kevinhwang91/nvim-bqf", ft = "qf" })
-  use({
-    "abecodes/tabout.nvim",
-    wants = { "nvim-treesitter" }, -- or require if not used so far
-    after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
-  })
-  use({
-    "stevearc/overseer.nvim",
-    config = function()
-      require("overseer").setup()
-    end,
-  })
+  -- use({
+  --   "abecodes/tabout.nvim",
+  --   wants = { "nvim-treesitter" }, -- or require if not used so far
+  --   after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+  -- })
+  -- use({
+  --   "stevearc/overseer.nvim",
+  --   config = function()
+  --     require("overseer").setup()
+  --   end,
+  -- })
   -- use({
   --   "beauwilliams/focus.nvim",
   --   config = function()
