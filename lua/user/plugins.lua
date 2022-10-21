@@ -112,21 +112,7 @@ return packer.startup(function(use)
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
 	-- Telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("telescope").setup({
-				defaults = {
-					preview = {
-						treesitter = {
-							-- disable can be set if enable isn't set
-							disable = { "perl", "javascript" },
-						},
-					},
-				},
-			})
-		end,
-	})
+	use({ "nvim-telescope/telescope.nvim" })
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
 	-- use({ "nvim-treesitter/nvim-treesitter" })
