@@ -268,7 +268,7 @@ return packer.startup(function(use)
   -- ######## Vimscript Plugins there is not alternative ###########
 
   -- markdown bullets
-  use ({"dkarter/bullets.vim"})
+  -- use ({"dkarter/bullets.vim"})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
