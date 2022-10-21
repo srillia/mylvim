@@ -1,5 +1,4 @@
 require("user.ui.notify")
-require("user.ui.treesitter")
 require("user.ui.bufferline")
 require("user.ui.indentline")
 require("user.ui.lualine")
