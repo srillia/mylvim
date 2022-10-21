@@ -8,6 +8,14 @@ if not status_config_ok then
 	return
 end
 
+local disable = function(lang, buf)
+	local max_filesize = 100 * 1024 -- 100 KB
+	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+	if ok and stats and stats.size > max_filesize then
+		return true
+	end
+end
+
 configs.setup({
 	-- ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
 	ensure_installed = "all",
@@ -17,26 +25,42 @@ configs.setup({
 	highlight = {
 		enable = true, -- false will disable the whole extension
 		-- disable = { "javascript" }, -- list of language that will be disabled
-		disable = function(lang, buf)
-			local max_filesize = 50 * 1024 -- 100 KB
-			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-			if ok and stats and stats.size > max_filesize then
-				return true
-			end
-		end,
-    additional_vim_regex_highlighting = false,
+		disable = disable,
+		additional_vim_regex_highlighting = false,
 	},
 	autopairs = {
 		enable = true,
+		disable = disable,
 	},
-	indent = { enable = true, disable = { "python", "css" } },
-
+	illuminate = {
+		disable = disable,
+		enable = true,
+		loaded = true,
+		module_path = "illuminate.providers.treesitter",
+	},
+	incremental_selection = {
+		disable = disable,
+		enable = false,
+		keymaps = {
+			init_selection = "gnn",
+			node_decremental = "grm",
+			node_incremental = "grn",
+			scope_incremental = "grc",
+		},
+		module_path = "nvim-treesitter.incremental_selection",
+	},
+	indent = {
+		enable = true,
+		disable = disable,
+	},
 	context_commentstring = {
 		enable = true,
+		disable = disable,
 		enable_autocmd = false,
 	},
 	rainbow = {
 		enable = true,
+		disable = disable,
 		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
 		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
@@ -45,6 +69,7 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
+		disable = disable,
 	},
 })
 
