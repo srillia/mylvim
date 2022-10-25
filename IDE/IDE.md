@@ -8,7 +8,7 @@
 ### Problems
 - treesitter, big file is load slow. example, javascript. **solved**
 - disable javascript, comment in vue, the \<script\> is not right. **enable treesitter**
-- treesitter, delete highlight ,need new theme for neovim. 
+- treesitter, delete highlight ,need new theme for neovim. **solved**
 
 ###### big file disable treesitter ,**ok**
 
