@@ -114,8 +114,9 @@ return packer.startup(function(use)
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
-	-- use({ "nvim-treesitter/nvim-treesitter" })
+	-- use({ "nvim-treesitter/nvim-treesitter", commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0" })
+	use({ "nvim-treesitter/nvim-treesitter" })
+  use({ "nvim-treesitter/playground" })
 	use({
 		"nvim-treesitter/nvim-treesitter-context",
 		config = function()
