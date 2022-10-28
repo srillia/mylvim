@@ -51,17 +51,11 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufReadPost" }, {
-	callback = function()
---		  nvim_hl()
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
-	callback = function()
-		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+-- 	callback = function()
+-- 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	pattern = { "*.java" },
